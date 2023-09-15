@@ -142,7 +142,7 @@ def main():
 
 
         wealth_arr = np.array([agent[ResourceComponent].wealth for agent in model.environment])
-        print(f'\r{i+1}/{ITERATIONS} - Total Collected: {model.environment[EnvResourceComponent].resources} Dominant Group Wealth: {wealth_upper} Subordinate Group Wealth: {wealth_lower} Gini: {round(gini(wealth_arr),4)}', \
+        print(f'\r{i+1}/{ITERATIONS} - Dominant Group Wealth: {wealth_upper} Subordinate Group Wealth: {wealth_lower} Gini: {round(gini(wealth_arr),4)}', \
               file=sys.stdout, end = '\r', flush=True)
         
         if args.visualize:
