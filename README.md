@@ -1,5 +1,5 @@
 # GATHER: A hunter-gatherer foraging simulator
-*GATHER* is an agent-based model (ABM)... TODO 
+*GATHER* is an agent-based model (ABM) simulating hunter gatherer behaviour. Agents collect resources from the environemnt and return to a home with the resources. The ABM allows for manipulation of the social network topology to study how social networks result in emergent social phenomena. As is, this model allows for investigation into task perfromance and wealth inequality.
 ## Installation
 
 **Note:** This document assumes you are using a UNIX-based OS (i.e. Ubuntu or MacOS)
@@ -32,36 +32,35 @@ For help with GATHER, type:
 
 which will output:
 ```bash
-usage: main.py [-h] [-s SIZE] [-n NEST] [-a A] [--deposit DEPOSIT] [--decay DECAY] 
-    [-i I] [--mode MODE] [--network NETWORK] [-v] [--seed SEED]
+usage: main.py [-h] [-s SIZE] [-n NEST] [-a AGENTS] [--deposit DEPOSIT] [--hdecay HDECAY] [--fdecay FDECAY] [-i ITERATIONS] [--mode MODE] [--upper UPPER]
+               [-v] [-v2] [-v3] [-v4] [--seed SEED] [--move MOVE] [--gamma GAMMA] [--eta ETA] [--random RANDOM] [--detect] [--center]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
-  -s SIZE, --size SIZE  The size of the environment. In all instances the environment will be a 
-                        square gridworld.
+  -s SIZE, --size SIZE  The size of the environment. In all instances the environment will be a square gridworld.
   -n NEST, --nest NEST  The size of the nest. In all instances the nest will be square.
-  -a A, --agents A      The number of agents to initialize.
+  -a AGENTS, --agents AGENTS
+                        The number of agents to initialize.
   --deposit DEPOSIT     The amount of pheromone dropped by the agents.
-  --decay DECAY         The rate at which the pheromone evaporates.
-  -i I, --iterations I  How long the simulation should run for.
+  --hdecay HDECAY       The rate at which the home pheromone evaporates.
+  --fdecay FDECAY       The rate at which the food pheromone evaporates.
+  -i ITERATIONS, --iterations ITERATIONS
+                        How long the simulation should run for.
   --mode MODE           What mode the environment should be initialized to
-  --network NETWORK     The type of network to initialize
+  --upper UPPER         Percenteage in dominant social group
   -v, --visualize       Whether environment images should be written to the output/ directory
+  -v2, --visualize2     Whether social network topology images should be written to the output2/ directory
+  -v3, --visualize3     Whether food and home pheromone images of each social group should be written to the output3/ directory
+  -v4, --visualize4     Whether images of the average total, average subordinate, and average dominant group pheromones over the entire simulation should be written to the output4/ directory
   --seed SEED           Specify the seed for the Model's pseudorandom number generator
+  --move MOVE           Which agent movement system to use
+  --gamma GAMMA         Discount Factor for RL Systems
+  --eta ETA             Learning Rate for RL Systems
+  --random RANDOM       Chance for agent to take a random action.
+  --detect              Should the agents detect and avoid being crowded with other agents
+  --center              Should the home base be centered in the environment.
 
 ```
-## Visualizing a Single Simulation:
 
-TODO
 
-## Running Multiple Simulations at Once:
 
-TODO
-
-## Processing Batch Simulations:
-
-TODO
-
-## Plotting Graphs:
-
-TODO
